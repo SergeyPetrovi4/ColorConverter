@@ -14,6 +14,7 @@
 		673605DC245C134A00727859 /* ColorDescriptionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605DB245C134A00727859 /* ColorDescriptionCellView.swift */; };
 		673605DF245C14DC00727859 /* ColorDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605DE245C14DC00727859 /* ColorDescription.swift */; };
 		673605E3245C156B00727859 /* ConverterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605E2245C156B00727859 /* ConverterManager.swift */; };
+		67621E67246AFF8D0075C832 /* NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67621E66246AFF8D0075C832 /* NSColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		673605DB245C134A00727859 /* ColorDescriptionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDescriptionCellView.swift; sourceTree = "<group>"; };
 		673605DE245C14DC00727859 /* ColorDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDescription.swift; sourceTree = "<group>"; };
 		673605E2245C156B00727859 /* ConverterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterManager.swift; sourceTree = "<group>"; };
+		67621E66246AFF8D0075C832 /* NSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				673605E1245C154E00727859 /* Managers */,
 				673605DD245C14BF00727859 /* Models */,
+				67621E69246B01270075C832 /* Extension */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -142,6 +145,14 @@
 				673605E2245C156B00727859 /* ConverterManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		67621E69246B01270075C832 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				67621E66246AFF8D0075C832 /* NSColor.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 			files = (
 				673605DF245C14DC00727859 /* ColorDescription.swift in Sources */,
 				673605DC245C134A00727859 /* ColorDescriptionCellView.swift in Sources */,
+				67621E67246AFF8D0075C832 /* NSColor.swift in Sources */,
 				673605C4245B3F7400727859 /* ConverterViewController.swift in Sources */,
 				673605C2245B3F7400727859 /* AppDelegate.swift in Sources */,
 				673605E3245C156B00727859 /* ConverterManager.swift in Sources */,
