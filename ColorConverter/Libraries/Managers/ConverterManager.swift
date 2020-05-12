@@ -65,7 +65,10 @@ class ConverterManager {
                     ColorDescription(icon: .swiftui, value: "Color(red: \(r), green: \(g), blue: \(b), alpha: \(a))"),
                     ColorDescription(icon: .ios, value: "UIColor(red: \(r), green: \(g), blue: \(b), alpha: \(a))"),
                     ColorDescription(icon: .mac, value: "NSColor(red: \(r), green: \(g), blue: \(b), alpha: \(a))"),
-                    ColorDescription(icon: .xamarin, value: "new UIColor(red: \(r)f, green: \(g)f, blue: \(b)f, alpha: \(a)f)")
+                    ColorDescription(icon: .xamarin, value: "new UIColor(red: \(r)f, green: \(g)f, blue: \(b)f, alpha: \(a)f)"),
+                    ColorDescription(icon: .java, value: "Color.rgb(\(Int(r * 255)), \(Int(g * 255)), \(Int(b * 255)))"),
+                    ColorDescription(icon: .csharp, value: "Color.FromArgb(\(Int(r * 255)), \(Int(g * 255)), \(Int(b * 255)), \(Int(a * 255)))"),
+                    ColorDescription(icon: .flutter, value: "Color.FromARGB(\(Int(r * 255)), \(Int(g * 255)), \(Int(b * 255)), \(Int(a * 255)))")
                 ]
             )
         }
