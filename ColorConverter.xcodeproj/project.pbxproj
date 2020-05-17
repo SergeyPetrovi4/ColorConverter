@@ -14,7 +14,10 @@
 		673605DC245C134A00727859 /* ColorDescriptionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605DB245C134A00727859 /* ColorDescriptionCellView.swift */; };
 		673605DF245C14DC00727859 /* ColorDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605DE245C14DC00727859 /* ColorDescription.swift */; };
 		673605E3245C156B00727859 /* ConverterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605E2245C156B00727859 /* ConverterManager.swift */; };
-		67621E67246AFF8D0075C832 /* NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67621E66246AFF8D0075C832 /* NSColor.swift */; };
+		67732CA7246FFE6F008E6877 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67732CA6246FFE6F008E6877 /* CoreGraphics.framework */; };
+		67732CAD247191C8008E6877 /* ConverterPickColorWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67732CAC247191C8008E6877 /* ConverterPickColorWindow.swift */; };
+		67732CAF24719237008E6877 /* ConverterPickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67732CAE24719237008E6877 /* ConverterPickColorView.swift */; };
+		67732CB124719415008E6877 /* ConverterColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67732CB024719415008E6877 /* ConverterColorPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +31,10 @@
 		673605DB245C134A00727859 /* ColorDescriptionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDescriptionCellView.swift; sourceTree = "<group>"; };
 		673605DE245C14DC00727859 /* ColorDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDescription.swift; sourceTree = "<group>"; };
 		673605E2245C156B00727859 /* ConverterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterManager.swift; sourceTree = "<group>"; };
-		67621E66246AFF8D0075C832 /* NSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColor.swift; sourceTree = "<group>"; };
+		67732CA6246FFE6F008E6877 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		67732CAC247191C8008E6877 /* ConverterPickColorWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterPickColorWindow.swift; sourceTree = "<group>"; };
+		67732CAE24719237008E6877 /* ConverterPickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterPickColorView.swift; sourceTree = "<group>"; };
+		67732CB024719415008E6877 /* ConverterColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterColorPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67732CA7246FFE6F008E6877 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +54,7 @@
 			children = (
 				673605C0245B3F7400727859 /* ColorConverter */,
 				673605BF245B3F7400727859 /* Products */,
+				67732CA5246FFE6E008E6877 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +140,7 @@
 		673605E0245C153F00727859 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				67732C92246B130C008E6877 /* CustomControls */,
 				673605E1245C154E00727859 /* Managers */,
 				673605DD245C14BF00727859 /* Models */,
 				67621E69246B01270075C832 /* Extension */,
@@ -150,9 +159,26 @@
 		67621E69246B01270075C832 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				67621E66246AFF8D0075C832 /* NSColor.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		67732C92246B130C008E6877 /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				67732CB024719415008E6877 /* ConverterColorPicker.swift */,
+				67732CAC247191C8008E6877 /* ConverterPickColorWindow.swift */,
+				67732CAE24719237008E6877 /* ConverterPickColorView.swift */,
+			);
+			path = CustomControls;
+			sourceTree = "<group>";
+		};
+		67732CA5246FFE6E008E6877 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67732CA6246FFE6F008E6877 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,10 +253,12 @@
 			files = (
 				673605DF245C14DC00727859 /* ColorDescription.swift in Sources */,
 				673605DC245C134A00727859 /* ColorDescriptionCellView.swift in Sources */,
-				67621E67246AFF8D0075C832 /* NSColor.swift in Sources */,
+				67732CAF24719237008E6877 /* ConverterPickColorView.swift in Sources */,
+				67732CB124719415008E6877 /* ConverterColorPicker.swift in Sources */,
 				673605C4245B3F7400727859 /* ConverterViewController.swift in Sources */,
 				673605C2245B3F7400727859 /* AppDelegate.swift in Sources */,
 				673605E3245C156B00727859 /* ConverterManager.swift in Sources */,
+				67732CAD247191C8008E6877 /* ConverterPickColorWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

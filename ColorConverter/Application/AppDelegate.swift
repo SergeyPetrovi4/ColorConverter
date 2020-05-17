@@ -23,14 +23,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         self.converterPopover.contentViewController = ConverterViewController.controller()
-        self.converterPopover.behavior = .transient
+        self.converterPopover.behavior = .semitransient
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-
 }
 
 extension AppDelegate {
@@ -45,6 +43,10 @@ extension AppDelegate {
         } else {
             self.converterPopover.performClose(sender)
         }
+    }
+    
+    func showColorPickerMagnify() {        
+        ConverterColorPicker.shared.show()
     }
 }
 
