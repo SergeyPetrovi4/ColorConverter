@@ -164,9 +164,7 @@
 		67732C92246B130C008E6877 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
-				67732CB024719415008E6877 /* ConverterColorPicker.swift */,
-				67732CAC247191C8008E6877 /* ConverterPickColorWindow.swift */,
-				67732CAE24719237008E6877 /* ConverterPickColorView.swift */,
+				67732CB22472AEC9008E6877 /* ColorPicker */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -177,6 +175,16 @@
 				67732CA6246FFE6F008E6877 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67732CB22472AEC9008E6877 /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				67732CB024719415008E6877 /* ConverterColorPicker.swift */,
+				67732CAC247191C8008E6877 /* ConverterPickColorWindow.swift */,
+				67732CAE24719237008E6877 /* ConverterPickColorView.swift */,
+			);
+			path = ColorPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
