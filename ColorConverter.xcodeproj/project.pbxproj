@@ -14,7 +14,6 @@
 		673605DC245C134A00727859 /* ColorDescriptionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605DB245C134A00727859 /* ColorDescriptionCellView.swift */; };
 		673605DF245C14DC00727859 /* ColorDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605DE245C14DC00727859 /* ColorDescription.swift */; };
 		673605E3245C156B00727859 /* ConverterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605E2245C156B00727859 /* ConverterManager.swift */; };
-		67732CA7246FFE6F008E6877 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67732CA6246FFE6F008E6877 /* CoreGraphics.framework */; };
 		67732CAD247191C8008E6877 /* ConverterPickColorWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67732CAC247191C8008E6877 /* ConverterPickColorWindow.swift */; };
 		67732CAF24719237008E6877 /* ConverterPickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67732CAE24719237008E6877 /* ConverterPickColorView.swift */; };
 		67732CB124719415008E6877 /* ConverterColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67732CB024719415008E6877 /* ConverterColorPicker.swift */; };
@@ -42,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67732CA7246FFE6F008E6877 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
