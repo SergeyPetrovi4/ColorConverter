@@ -15,7 +15,7 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
     @IBOutlet weak var scrollView: NSScrollView!
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,27 +26,36 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
         }
         
         self.tableView.delegate = self
-        self.tableView.dataSource = self        
+        self.tableView.dataSource = self
     }
 
     // MARK: - Actions
     
+    @IBAction func didClickColorPickerButton(_ sender: NSButton) {
+        
+        guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+
+        appDelegate.toggleConverterPopover(nil)
+        appDelegate.showColorPickerMagnify()
+    }
+    
     @IBAction func didHitEnterKey(_ sender: NSTextField) {
         
         if !sender.stringValue.isEmpty {
-            
+
             ConverterManager.shared.convertHexToRgb(from: sender.stringValue)
-            
+
             self.scrollView.isHidden = false
             self.tableView.reloadData()
             self.tableViewHeightConstraint.constant = self.tableView.intrinsicContentSize.height
             return
         }
-        
+
         self.scrollView.isHidden = true
         return
     }
-    
     
     // MARK: - NSTableViewDataSource
     
@@ -82,7 +91,6 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
                 
         // Copy selected color description to clipboard
         let description = ConverterManager.shared.descriptions[self.tableView.selectedRow].value
-        
         let pasteboard = NSPasteboard.general
         pasteboard.clearContents()
         pasteboard.string(forType: .string)
