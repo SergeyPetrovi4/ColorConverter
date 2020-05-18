@@ -15,7 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let converterPopover = NSPopover()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
         
         if let button = self.converterStatusBar.button {
             button.image = NSImage(named: "paint_desk")
@@ -23,7 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         self.converterPopover.contentViewController = ConverterViewController.controller()
-        self.converterPopover.behavior = .semitransient
+        self.converterPopover.behavior = .transient
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -45,8 +44,17 @@ extension AppDelegate {
         }
     }
     
-    func showColorPickerMagnify() {        
-        ConverterColorPicker.shared.show()
+    func showColorPickerMagnify() {
+        
+        ConverterColorPicker.shared.show { (hexColor) in
+            self.toggleConverterPopover(nil)
+            
+            if let converter = self.converterPopover.contentViewController as? ConverterViewController,
+                let hex = hexColor {
+                converter.colorTextField.stringValue = hex
+                converter.didHitEnterKey(converter.colorTextField)
+            }
+        }
     }
 }
 

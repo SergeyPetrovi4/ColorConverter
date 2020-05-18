@@ -91,7 +91,6 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
                 
         // Copy selected color description to clipboard
         let description = ConverterManager.shared.descriptions[self.tableView.selectedRow].value
-        
         let pasteboard = NSPasteboard.general
         pasteboard.clearContents()
         pasteboard.string(forType: .string)

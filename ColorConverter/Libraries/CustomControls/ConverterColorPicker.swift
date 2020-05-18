@@ -8,14 +8,18 @@
 
 import Cocoa
 
+typealias PickedColorHandler = ((String?) -> Void)
+
 public class ConverterColorPicker: NSObject {
     
     static let shared = ConverterColorPicker()
     private var screenPickerWindow: ConverterPickColorWindow?
+    private var completion: PickedColorHandler?
     
     private override init() {}
     
-    func show() {
+    func show(completion: @escaping PickedColorHandler) {
+        self.completion = completion
         self.pickColor()
     }
 }
@@ -25,15 +29,18 @@ private extension ConverterColorPicker {
     private func pickColor() {
         self.drop()
         self.run()
-        NSCursor.hide()
     }
 
     func run() {
-        self.screenPickerWindow = ConverterPickColorWindow(
-            contentRect: NSRect(x: NSEvent.mouseLocation.x, y: NSEvent.mouseLocation.y, width: 120, height: 120),
-            styleMask: .borderless,
-            backing: .buffered,
-            defer: true)
+        
+        self.screenPickerWindow = ConverterPickColorWindow(contentRect: NSRect(x: NSEvent.mouseLocation.x, y: NSEvent.mouseLocation.y, width: 120, height: 120),
+                                                           styleMask: .borderless,
+                                                           backing: .buffered,
+                                                           defer: true,
+                                                           completion: { (hex) in
+            
+            if let hexColor = hex { self.completion?(hexColor) }
+        })
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(windowDidResignKey(_:)),

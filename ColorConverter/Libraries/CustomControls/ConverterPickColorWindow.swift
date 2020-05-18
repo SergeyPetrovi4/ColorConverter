@@ -9,9 +9,12 @@
 import Cocoa
 import Carbon.HIToolbox
 
+typealias CompletionHandler = ((String?) -> Void)
+
 class ConverterPickColorWindow: NSWindow {
 
     private var pixelZoom: CGFloat = 7
+    private var completion: CompletionHandler?
 
     var image: CGImage?
 
@@ -22,15 +25,15 @@ class ConverterPickColorWindow: NSWindow {
     override var acceptsFirstResponder: Bool {
         return true
     }
-
-    public override init(
-        contentRect: NSRect,
-        styleMask style: NSWindow.StyleMask,
-        backing backingStoreType: NSWindow.BackingStoreType,
-        defer flag: Bool) {
+    
+    public init(contentRect: NSRect,
+                styleMask style: NSWindow.StyleMask,
+                backing backingStoreType: NSWindow.BackingStoreType,
+                defer flag: Bool,
+                completion: CompletionHandler?) {
         
         super.init(contentRect: contentRect, styleMask: style, backing: backingStoreType, defer: flag)
-
+        
         self.isOpaque = false
         self.backgroundColor = .clear
         self.level = .popUpMenu
@@ -41,6 +44,9 @@ class ConverterPickColorWindow: NSWindow {
         self.contentView = captureView
 
         self.drawContext()
+        NSCursor.hide()
+        
+        self.completion = completion
     }
     
     private func drawContext() {
@@ -88,27 +94,29 @@ class ConverterPickColorWindow: NSWindow {
         let f = self.frame
         
         if NSPointInRect(point, f) {
-            if let image = self.image, let correctedColor = image.colorAtCenter() {
+            
+            if let image = self.image, let hexColor = image.hexFromRGB() {
+                self.completion?(hexColor)
             }
             
             self.orderOut(self)
         }
     }
 
-//    open override func scrollWheel(with event: NSEvent) {
-//        if event.deltaY > 0.01 {
-//            self.pixelZoom += 1
-//        } else if event.deltaY < -0.01 {
-//            self.pixelZoom -= 1
-//        }
-//        self.pixelZoom = self.pixelZoom.clamped(to: 2 ... 24)
-//
-//        (self.contentView as? ConverterPickColorView)?.pixelZoom = self.pixelZoom
-//
-//        self.mouseMoved(with: event)
-//
-//        super.scrollWheel(with: event)
-//    }
+    open override func scrollWheel(with event: NSEvent) {
+        if event.deltaY > 0.01 {
+            self.pixelZoom += 1
+            
+        } else if event.deltaY < -0.01 {
+            self.pixelZoom -= 1
+        }
+        
+        self.pixelZoom = self.pixelZoom.clamped(to: 2 ... 24)
+        (self.contentView as? ConverterPickColorView)?.pixelZoom = self.pixelZoom
+
+        self.mouseMoved(with: event)
+        super.scrollWheel(with: event)
+    }
 
     override func keyDown(with event: NSEvent) {
         if event.keyCode == kVK_Escape {
@@ -119,19 +127,33 @@ class ConverterPickColorWindow: NSWindow {
 }
 
 private extension ExpressibleByIntegerLiteral where Self: Comparable {
+    
     func clamped(to range: ClosedRange<Self>) -> Self {
         return min(max(self, range.lowerBound), range.upperBound)
     }
 }
 
 private extension CGImage {
-    func colorAtCenter() -> NSColor? {
+    
+    func colorRGB() -> NSColor? {
+        
         let bitmapImageRep = NSBitmapImageRep(cgImage: self)
-        let centerX: Int = Int(bitmapImageRep.size.width) / 2
-        let centerY: Int = Int(bitmapImageRep.size.height) / 2
+        let centerX = Int(bitmapImageRep.size.width) / 2
+        let centerY = Int(bitmapImageRep.size.height) / 2
 
-        let color = bitmapImageRep.colorAt(x: centerX, y: centerY)
-        let correctedColor = color?.usingColorSpace(bitmapImageRep.colorSpace) ?? color
-        return correctedColor
+        return bitmapImageRep.colorAt(x: centerX, y: centerY)
+    }
+    
+    func hexFromRGB() -> String? {
+        
+        guard let components = colorRGB()?.cgColor.components else {
+            return nil
+        }
+        
+        let r = CGFloat(components[0])
+        let g = CGFloat(components[1])
+        let b = CGFloat(components[2])
+
+        return String.init(format: "#%02lX%02lX%02lX", Int(Float(r * 255)), Int(Float(g * 255)), Int(Float(b * 255)))
     }
 }
