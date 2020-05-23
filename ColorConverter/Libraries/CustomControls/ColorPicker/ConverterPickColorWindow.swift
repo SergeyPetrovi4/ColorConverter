@@ -119,8 +119,8 @@ class ConverterPickColorWindow: NSWindow {
     }
 
     override func keyDown(with event: NSEvent) {
+        
         if event.keyCode == kVK_Escape {
-
             self.orderOut(self)
         }
     }

@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         if let button = self.converterStatusBar.button {
-            button.image = NSImage(named: "paint_desk")
+            button.image = NSImage(named: "waterdrop")
             button.action = #selector(toggleConverterPopover(_:))
         }
         

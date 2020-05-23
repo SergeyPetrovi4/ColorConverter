@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "paint_desk.png",
+      "filename" : "waterdrop.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "paint_desk@2x.png",
+      "filename" : "waterdrop@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "paint_desk@3x.png",
+      "filename" : "waterdrop@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
