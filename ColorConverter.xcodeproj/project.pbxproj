@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67031BD624787C24003BEC23 /* ColorHystoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67031BD524787C24003BEC23 /* ColorHystoryView.swift */; };
+		67031BDA24787DAF003BEC23 /* ColorHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67031BD924787DAF003BEC23 /* ColorHistoryManager.swift */; };
+		67031BDC2479204D003BEC23 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67031BDB2479204D003BEC23 /* String.swift */; };
 		673605C2245B3F7400727859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605C1245B3F7400727859 /* AppDelegate.swift */; };
 		673605C4245B3F7400727859 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605C3245B3F7400727859 /* ConverterViewController.swift */; };
 		673605C6245B3F7500727859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673605C5245B3F7500727859 /* Assets.xcassets */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67031BD524787C24003BEC23 /* ColorHystoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHystoryView.swift; sourceTree = "<group>"; };
+		67031BD924787DAF003BEC23 /* ColorHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHistoryManager.swift; sourceTree = "<group>"; };
+		67031BDB2479204D003BEC23 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		673605BE245B3F7400727859 /* ColorConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		673605C1245B3F7400727859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		673605C3245B3F7400727859 /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				673605DB245C134A00727859 /* ColorDescriptionCellView.swift */,
+				67031BD524787C24003BEC23 /* ColorHystoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,6 +156,7 @@
 		673605E1245C154E00727859 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				67031BD924787DAF003BEC23 /* ColorHistoryManager.swift */,
 				673605E2245C156B00727859 /* ConverterManager.swift */,
 			);
 			path = Managers;
@@ -157,6 +165,7 @@
 		67621E69246B01270075C832 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				67031BDB2479204D003BEC23 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -261,9 +270,12 @@
 				673605DC245C134A00727859 /* ColorDescriptionCellView.swift in Sources */,
 				67732CAF24719237008E6877 /* ConverterPickColorView.swift in Sources */,
 				67732CB124719415008E6877 /* ConverterColorPicker.swift in Sources */,
+				67031BDA24787DAF003BEC23 /* ColorHistoryManager.swift in Sources */,
+				67031BDC2479204D003BEC23 /* String.swift in Sources */,
 				673605C4245B3F7400727859 /* ConverterViewController.swift in Sources */,
 				673605C2245B3F7400727859 /* AppDelegate.swift in Sources */,
 				673605E3245C156B00727859 /* ConverterManager.swift in Sources */,
+				67031BD624787C24003BEC23 /* ColorHystoryView.swift in Sources */,
 				67732CAD247191C8008E6877 /* ConverterPickColorWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
