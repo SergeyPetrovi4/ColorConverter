@@ -13,6 +13,9 @@ enum OSType: String {
     case mac
     case xamarin
     case swiftui
+    case java
+    case csharp
+    case flutter
 }
 
 struct ColorDescription {

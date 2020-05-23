@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Carbon.HIToolbox
 
 class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
@@ -15,6 +16,7 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
     @IBOutlet weak var scrollView: NSScrollView!
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var colorHistoryContainer: NSStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,27 +28,69 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
         }
         
         self.tableView.delegate = self
-        self.tableView.dataSource = self        
+        self.tableView.dataSource = self
+        
+        self.updateHistoryOfColors()
+    }
+    
+    // MARK: - Private
+    
+    private func updateHistoryOfColors() {
+        
+        self.colorHistoryContainer.isHidden = ColorHistoryManager.shared.colors.isEmpty
+        self.colorHistoryContainer.subviews.removeAll()
+        
+        ColorHistoryManager.shared.colors.enumerated().forEach({
+            
+            let historyView = ColorHistoryView()
+            let value = ConverterManager.shared.hexRgb(hex: $0.element)
+            
+            // Update color from history
+            historyView.set(color: NSColor(red: value.r, green: value.g, blue: value.b, alpha: value.a), atIndex: $0.offset) { (index) in
+                self.colorTextField.stringValue = ColorHistoryManager.shared.colors[index]
+                self.convertAndReloadUIData(with: ColorHistoryManager.shared.colors[index])
+            }
+            
+            self.colorHistoryContainer.addArrangedSubview(historyView)
+        })
+    }
+    
+    private func convertAndReloadUIData(with value: String) {
+        
+        ConverterManager.shared.convertHexToRgb(from: value)
+
+        self.scrollView.isHidden = false
+        self.tableView.reloadData()
+        self.tableViewHeightConstraint.constant = self.tableView.intrinsicContentSize.height
     }
 
     // MARK: - Actions
     
-    @IBAction func didHitEnterKey(_ sender: NSTextField) {
+    @IBAction func didClickColorPickerButton(_ sender: NSButton) {
         
-        if !sender.stringValue.isEmpty {
-            
-            ConverterManager.shared.convertHexToRgb(from: sender.stringValue)
-            
-            self.scrollView.isHidden = false
-            self.tableView.reloadData()
-            self.tableViewHeightConstraint.constant = self.tableView.intrinsicContentSize.height
+        guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
             return
         }
+
+        appDelegate.toggleConverterPopover(nil)
+        appDelegate.showColorPickerMagnify()
+    }
+    
+    @IBAction func didHitEnterKey(_ sender: NSTextField) {
         
+        if !sender.stringValue.isEmpty, sender.stringValue.isHexColor {
+
+            // Convert and update color from user sent
+            self.convertAndReloadUIData(with: sender.stringValue)
+            ColorHistoryManager.shared.append(color: sender.stringValue)
+            self.updateHistoryOfColors()
+            
+            return
+        }
+
         self.scrollView.isHidden = true
         return
     }
-    
     
     // MARK: - NSTableViewDataSource
     
@@ -82,7 +126,6 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
                 
         // Copy selected color description to clipboard
         let description = ConverterManager.shared.descriptions[self.tableView.selectedRow].value
-        
         let pasteboard = NSPasteboard.general
         pasteboard.clearContents()
         pasteboard.string(forType: .string)
@@ -90,6 +133,17 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
         
         appDelegate.toggleConverterPopover(nil)
         self.tableView.deselectRow(self.tableView.selectedRow)
+    }
+    
+    // MARK: - NSControlTextEditingDelegate
+    
+    func controlTextDidChange(_ obj: Notification) {
+        
+        guard let textField = obj.object as? NSTextField else {
+            return
+        }
+        
+        self.scrollView.isHidden = textField.stringValue.isEmpty
     }
 }
 

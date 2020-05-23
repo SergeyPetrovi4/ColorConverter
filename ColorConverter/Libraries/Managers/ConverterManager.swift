@@ -17,6 +17,23 @@ class ConverterManager {
     
     func convertHexToRgb(from hex: String) {
         
+        let value = self.hexRgb(hex: hex)
+        self.descriptions.removeAll()
+        
+        self.descriptions.append(contentsOf: [
+            ColorDescription(icon: .swiftui, value: "Color(red: \(value.r), green: \(value.g), blue: \(value.b), alpha: \(value.a))"),
+            ColorDescription(icon: .ios, value: "UIColor(red: \(value.r), green: \(value.g), blue: \(value.b), alpha: \(value.a))"),
+            ColorDescription(icon: .mac, value: "NSColor(red: \(value.r), green: \(value.g), blue: \(value.b), alpha: \(value.a))"),
+            ColorDescription(icon: .xamarin, value: "new UIColor(red: \(value.r)f, green: \(value.g)f, blue: \(value.b)f, alpha: \(value.a)f)"),
+            ColorDescription(icon: .java, value: "Color.rgb(\(Int(value.r * 255)), \(Int(value.g * 255)), \(Int(value.b * 255)))"),
+            ColorDescription(icon: .csharp, value: "Color.FromArgb(\(Int(value.r * 255)), \(Int(value.g * 255)), \(Int(value.b * 255)), \(Int(value.a * 255)))"),
+            ColorDescription(icon: .flutter, value: "Color.FromARGB(\(Int(value.r * 255)), \(Int(value.g * 255)), \(Int(value.b * 255)), \(Int(value.a * 255)))")
+            ]
+        )
+    }
+    
+    func hexRgb(hex: String) -> (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
+        
         func cgFloatValue(from value: CGFloat) -> CGFloat? {
             
             guard let number = NumberFormatter().number(from: String(format: "%.2f", value)) else {
@@ -25,10 +42,8 @@ class ConverterManager {
             
             return CGFloat(number.doubleValue)
         }
-        
-        self.descriptions.removeAll()
-        
-        var r, g, b, a: CGFloat
+                
+        var r = CGFloat(0), g = CGFloat(0), b = CGFloat(0), a = CGFloat(0)
         var start: String.Index = hex.index(hex.startIndex, offsetBy: 0)
 
         if hex.hasPrefix("#") {
@@ -60,14 +75,9 @@ class ConverterManager {
                 b = CGFloat(valueB)
                 a = CGFloat(valueA)
             }
-            
-            self.descriptions.append(contentsOf: [
-                    ColorDescription(icon: .swiftui, value: "Color(red: \(r), green: \(g), blue: \(b), alpha: \(a))"),
-                    ColorDescription(icon: .ios, value: "UIColor(red: \(r), green: \(g), blue: \(b), alpha: \(a))"),
-                    ColorDescription(icon: .mac, value: "NSColor(red: \(r), green: \(g), blue: \(b), alpha: \(a))"),
-                    ColorDescription(icon: .xamarin, value: "new UIColor(red: \(r)f, green: \(g)f, blue: \(b)f, alpha: \(a)f)")
-                ]
-            )
+                        
         }
+        
+        return (r, g, b, a)
     }
 }

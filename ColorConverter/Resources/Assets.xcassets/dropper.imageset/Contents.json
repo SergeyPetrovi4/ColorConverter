@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "paint_desk.png",
+      "filename" : "icons8-color_dropper.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "paint_desk@2x.png",
+      "filename" : "icons8-color_dropper-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "paint_desk@3x.png",
+      "filename" : "icons8-color_dropper-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
