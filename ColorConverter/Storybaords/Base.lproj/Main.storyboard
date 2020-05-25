@@ -768,22 +768,28 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView identifier="ColorDescriptionCellView" id="T2C-EC-kSx" customClass="ColorDescriptionCellView" customModule="ColorConverter" customModuleProvider="target">
-                                                                    <rect key="frame" x="1" y="1" width="435" height="35"/>
+                                                                    <rect key="frame" x="1" y="1" width="435" height="42"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bvU-wg-0ze">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="435" height="35"/>
+                                                                        <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iuv-C4-yDx">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="435" height="42"/>
                                                                             <subviews>
-                                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GgA-U2-Gpu">
-                                                                                    <rect key="frame" x="0.0" y="10" width="16" height="16"/>
+                                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Fzm-QZ-Ox7">
+                                                                                    <rect key="frame" x="-2" y="22" width="90" height="20"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" constant="16" id="ifk-z0-Vgh"/>
-                                                                                        <constraint firstAttribute="height" constant="16" id="oT4-3y-pcm"/>
+                                                                                        <constraint firstAttribute="height" constant="20" id="xFY-1h-8dx"/>
                                                                                     </constraints>
-                                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="gjx-Zf-p3f"/>
-                                                                                </imageView>
+                                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="u8w-oh-Pww">
+                                                                                        <font key="font" metaFont="cellTitle"/>
+                                                                                        <color key="textColor" name="linkColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                    </textFieldCell>
+                                                                                </textField>
                                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="FCr-7n-boz">
-                                                                                    <rect key="frame" x="22" y="10" width="415" height="16"/>
+                                                                                    <rect key="frame" x="-2" y="0.0" width="96" height="22"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="22" id="AQr-Dk-0lX"/>
+                                                                                    </constraints>
                                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="HCQ-WB-Gc7">
                                                                                         <font key="font" metaFont="system"/>
                                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -792,7 +798,7 @@
                                                                                 </textField>
                                                                             </subviews>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="35" id="0Pn-1P-qjS"/>
+                                                                                <constraint firstAttribute="height" constant="42" id="SeE-Uo-PJv"/>
                                                                             </constraints>
                                                                             <visibilityPriorities>
                                                                                 <integer value="1000"/>
@@ -805,14 +811,14 @@
                                                                         </stackView>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="trailing" secondItem="bvU-wg-0ze" secondAttribute="trailing" id="HpY-Jz-SNa"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="bvU-wg-0ze" secondAttribute="bottom" id="IMs-DP-zi6"/>
-                                                                        <constraint firstItem="bvU-wg-0ze" firstAttribute="leading" secondItem="T2C-EC-kSx" secondAttribute="leading" id="j0U-dt-R6d"/>
-                                                                        <constraint firstItem="bvU-wg-0ze" firstAttribute="top" secondItem="T2C-EC-kSx" secondAttribute="top" id="soA-bf-kZO"/>
+                                                                        <constraint firstItem="iuv-C4-yDx" firstAttribute="top" secondItem="T2C-EC-kSx" secondAttribute="top" id="Hdn-07-kf8"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="iuv-C4-yDx" secondAttribute="bottom" id="Mdi-PB-JYO"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="iuv-C4-yDx" secondAttribute="trailing" id="o9k-vg-WTS"/>
+                                                                        <constraint firstItem="iuv-C4-yDx" firstAttribute="leading" secondItem="T2C-EC-kSx" secondAttribute="leading" id="xSF-S2-m2J"/>
                                                                     </constraints>
                                                                     <connections>
-                                                                        <outlet property="osImageView" destination="GgA-U2-Gpu" id="1Qo-8J-MeA"/>
                                                                         <outlet property="textField" destination="FCr-7n-boz" id="RXX-vE-H8p"/>
+                                                                        <outlet property="titleTextView" destination="Fzm-QZ-Ox7" id="T5S-be-sh6"/>
                                                                     </connections>
                                                                 </tableCellView>
                                                             </prototypeCellViews>

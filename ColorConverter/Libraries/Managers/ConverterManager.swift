@@ -21,13 +21,13 @@ class ConverterManager {
         self.descriptions.removeAll()
         
         self.descriptions.append(contentsOf: [
-            ColorDescription(icon: .swiftui, value: "Color(red: \(value.r), green: \(value.g), blue: \(value.b), alpha: \(value.a))"),
-            ColorDescription(icon: .ios, value: "UIColor(red: \(value.r), green: \(value.g), blue: \(value.b), alpha: \(value.a))"),
-            ColorDescription(icon: .mac, value: "NSColor(red: \(value.r), green: \(value.g), blue: \(value.b), alpha: \(value.a))"),
-            ColorDescription(icon: .xamarin, value: "new UIColor(red: \(value.r)f, green: \(value.g)f, blue: \(value.b)f, alpha: \(value.a)f)"),
-            ColorDescription(icon: .java, value: "Color.rgb(\(Int(value.r * 255)), \(Int(value.g * 255)), \(Int(value.b * 255)))"),
-            ColorDescription(icon: .csharp, value: "Color.FromArgb(\(Int(value.r * 255)), \(Int(value.g * 255)), \(Int(value.b * 255)), \(Int(value.a * 255)))"),
-            ColorDescription(icon: .flutter, value: "Color.FromARGB(\(Int(value.r * 255)), \(Int(value.g * 255)), \(Int(value.b * 255)), \(Int(value.a * 255)))")
+            ColorDescription(title: .swiftui, value: "Color(red: \(value.r), green: \(value.g), blue: \(value.b), alpha: \(value.a))"),
+            ColorDescription(title: .ios, value: "UIColor(red: \(value.r), green: \(value.g), blue: \(value.b), alpha: \(value.a))"),
+            ColorDescription(title: .mac, value: "NSColor(red: \(value.r), green: \(value.g), blue: \(value.b), alpha: \(value.a))"),
+            ColorDescription(title: .xamarin, value: "new UIColor(red: \(value.r)f, green: \(value.g)f, blue: \(value.b)f, alpha: \(value.a)f)"),
+            ColorDescription(title: .java, value: "Color.rgb(\(Int(value.r * 255)), \(Int(value.g * 255)), \(Int(value.b * 255)))"),
+            ColorDescription(title: .csharp, value: "Color.FromArgb(\(Int(value.r * 255)), \(Int(value.g * 255)), \(Int(value.b * 255)), \(Int(value.a * 255)))"),
+            ColorDescription(title: .flutter, value: "Color.FromARGB(\(Int(value.r * 255)), \(Int(value.g * 255)), \(Int(value.b * 255)), \(Int(value.a * 255)))")
             ]
         )
     }
