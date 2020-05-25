@@ -9,17 +9,17 @@
 import Foundation
 
 enum OSType: String {
-    case ios
-    case mac
-    case xamarin
-    case swiftui
-    case java
-    case csharp
-    case flutter
+    case ios = "Swift Cocoa Touch"
+    case mac = "Swift Cocoa"
+    case xamarin = "Xamarin"
+    case swiftui = "SwiftUI"
+    case java = "Java"
+    case csharp = "C Sharp"
+    case flutter = "Flutter"
 }
 
 struct ColorDescription {
     
-    var icon: OSType
+    var title: OSType
     var value: String
 }

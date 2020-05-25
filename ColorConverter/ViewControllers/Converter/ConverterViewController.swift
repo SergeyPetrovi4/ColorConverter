@@ -71,7 +71,7 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
         guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
             return
         }
-
+        
         appDelegate.toggleConverterPopover(nil)
         appDelegate.showColorPickerMagnify()
     }
@@ -115,7 +115,7 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
     // MARK: - NSTableViewDelegate
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 35.0
+        return 42.0
     }
 
     func tableViewSelectionDidChange(_ notification: Notification) {
