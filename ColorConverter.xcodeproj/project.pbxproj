@@ -20,7 +20,25 @@
 		67732CAD247191C8008E6877 /* ConverterPickColorWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67732CAC247191C8008E6877 /* ConverterPickColorWindow.swift */; };
 		67732CAF24719237008E6877 /* ConverterPickColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67732CAE24719237008E6877 /* ConverterPickColorView.swift */; };
 		67732CB124719415008E6877 /* ConverterColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67732CB024719415008E6877 /* ConverterColorPicker.swift */; };
+		67E2AE20247D12BC00E214C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E2AE1F247D12BC00E214C6 /* AppDelegate.swift */; };
+		67E2AE24247D12BE00E214C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67E2AE23247D12BE00E214C6 /* Assets.xcassets */; };
+		67E2AE27247D12BE00E214C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E2AE25247D12BE00E214C6 /* Main.storyboard */; };
+		67E2AE2E247D136300E214C6 /* LaunchAtLoginHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 67E2AE1D247D12BC00E214C6 /* LaunchAtLoginHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		67E2AE30247D138600E214C6 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E2AE2F247D138600E214C6 /* ServiceManagement.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		67E2AE2D247D133E00E214C6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				67E2AE2E247D136300E214C6 /* LaunchAtLoginHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		67031BD524787C24003BEC23 /* ColorHystoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHystoryView.swift; sourceTree = "<group>"; };
@@ -40,10 +58,25 @@
 		67732CAC247191C8008E6877 /* ConverterPickColorWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterPickColorWindow.swift; sourceTree = "<group>"; };
 		67732CAE24719237008E6877 /* ConverterPickColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterPickColorView.swift; sourceTree = "<group>"; };
 		67732CB024719415008E6877 /* ConverterColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterColorPicker.swift; sourceTree = "<group>"; };
+		67E2AE1D247D12BC00E214C6 /* LaunchAtLoginHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchAtLoginHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		67E2AE1F247D12BC00E214C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		67E2AE23247D12BE00E214C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67E2AE26247D12BE00E214C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		67E2AE28247D12BE00E214C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67E2AE29247D12BE00E214C6 /* LaunchAtLoginHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchAtLoginHelper.entitlements; sourceTree = "<group>"; };
+		67E2AE2F247D138600E214C6 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		673605BB245B3F7400727859 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67E2AE30247D138600E214C6 /* ServiceManagement.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67E2AE1A247D12BC00E214C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -57,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				673605C0245B3F7400727859 /* ColorConverter */,
+				67E2AE1E247D12BC00E214C6 /* LaunchAtLoginHelper */,
 				673605BF245B3F7400727859 /* Products */,
 				67732CA5246FFE6E008E6877 /* Frameworks */,
 			);
@@ -66,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				673605BE245B3F7400727859 /* Color2Code.app */,
+				67E2AE1D247D12BC00E214C6 /* LaunchAtLoginHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +216,7 @@
 		67732CA5246FFE6E008E6877 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				67E2AE2F247D138600E214C6 /* ServiceManagement.framework */,
 				67732CA6246FFE6F008E6877 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
@@ -196,6 +232,18 @@
 			path = ColorPicker;
 			sourceTree = "<group>";
 		};
+		67E2AE1E247D12BC00E214C6 /* LaunchAtLoginHelper */ = {
+			isa = PBXGroup;
+			children = (
+				67E2AE1F247D12BC00E214C6 /* AppDelegate.swift */,
+				67E2AE23247D12BE00E214C6 /* Assets.xcassets */,
+				67E2AE25247D12BE00E214C6 /* Main.storyboard */,
+				67E2AE28247D12BE00E214C6 /* Info.plist */,
+				67E2AE29247D12BE00E214C6 /* LaunchAtLoginHelper.entitlements */,
+			);
+			path = LaunchAtLoginHelper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,6 +254,7 @@
 				673605BA245B3F7400727859 /* Sources */,
 				673605BB245B3F7400727859 /* Frameworks */,
 				673605BC245B3F7400727859 /* Resources */,
+				67E2AE2D247D133E00E214C6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -214,6 +263,23 @@
 			name = Color2Code;
 			productName = ColorConverter;
 			productReference = 673605BE245B3F7400727859 /* Color2Code.app */;
+			productType = "com.apple.product-type.application";
+		};
+		67E2AE1C247D12BC00E214C6 /* LaunchAtLoginHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67E2AE2A247D12BE00E214C6 /* Build configuration list for PBXNativeTarget "LaunchAtLoginHelper" */;
+			buildPhases = (
+				67E2AE19247D12BC00E214C6 /* Sources */,
+				67E2AE1A247D12BC00E214C6 /* Frameworks */,
+				67E2AE1B247D12BC00E214C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LaunchAtLoginHelper;
+			productName = LaunchAtLoginHelper;
+			productReference = 67E2AE1D247D12BC00E214C6 /* LaunchAtLoginHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -227,6 +293,9 @@
 				ORGANIZATIONNAME = "Sergey Krasiuk";
 				TargetAttributes = {
 					673605BD245B3F7400727859 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					67E2AE1C247D12BC00E214C6 = {
 						CreatedOnToolsVersion = 11.4;
 					};
 				};
@@ -245,6 +314,7 @@
 			projectRoot = "";
 			targets = (
 				673605BD245B3F7400727859 /* Color2Code */,
+				67E2AE1C247D12BC00E214C6 /* LaunchAtLoginHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -256,6 +326,15 @@
 			files = (
 				673605C6245B3F7500727859 /* Assets.xcassets in Resources */,
 				673605C9245B3F7500727859 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67E2AE1B247D12BC00E214C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67E2AE24247D12BE00E214C6 /* Assets.xcassets in Resources */,
+				67E2AE27247D12BE00E214C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +359,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67E2AE19247D12BC00E214C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67E2AE20247D12BC00E214C6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -287,6 +374,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				673605C8245B3F7500727859 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		67E2AE25247D12BE00E214C6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67E2AE26247D12BE00E214C6 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -451,6 +546,46 @@
 			};
 			name = Release;
 		};
+		67E2AE2B247D12BE00E214C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 68EA362QKS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = LaunchAtLoginHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.krasiuk.LaunchAtLoginHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		67E2AE2C247D12BE00E214C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 68EA362QKS;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = LaunchAtLoginHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.krasiuk.LaunchAtLoginHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -468,6 +603,15 @@
 			buildConfigurations = (
 				673605CF245B3F7500727859 /* Debug */,
 				673605D0245B3F7500727859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67E2AE2A247D12BE00E214C6 /* Build configuration list for PBXNativeTarget "LaunchAtLoginHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67E2AE2B247D12BE00E214C6 /* Debug */,
+				67E2AE2C247D12BE00E214C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
