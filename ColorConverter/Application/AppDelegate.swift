@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -23,6 +24,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         self.converterPopover.contentViewController = ConverterViewController.controller()
         self.converterPopover.behavior = .transient
+        
+        let launcherAppId = "com.krasiuk.LaunchAtLoginHelper"
+        let runningApps = NSWorkspace.shared.runningApplications
+        let isRunning = !runningApps.filter { $0.bundleIdentifier == launcherAppId }.isEmpty
+
+        if let isLaunch = UserDefaults.standard.value(forKey: "com.krasiuk.colortocode.launch") as? Bool {
+            SMLoginItemSetEnabled(launcherAppId as CFString, isLaunch)
+            
+        } else {
+            SMLoginItemSetEnabled(launcherAppId as CFString, false)
+        }
+        
+
+        if isRunning {
+            DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier!)
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -56,5 +73,9 @@ extension AppDelegate {
             }
         }
     }
+}
+
+extension Notification.Name {
+    static let killLauncher = Notification.Name("killLauncher")
 }
 

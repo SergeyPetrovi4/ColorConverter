@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icons8-color_dropper.png",
+      "filename" : "dropper.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-color_dropper-1.png",
+      "filename" : "dropper@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icons8-color_dropper-2.png",
+      "filename" : "dropper@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
