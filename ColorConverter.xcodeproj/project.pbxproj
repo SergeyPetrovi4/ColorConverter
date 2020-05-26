@@ -26,7 +26,7 @@
 		67031BD524787C24003BEC23 /* ColorHystoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHystoryView.swift; sourceTree = "<group>"; };
 		67031BD924787DAF003BEC23 /* ColorHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHistoryManager.swift; sourceTree = "<group>"; };
 		67031BDB2479204D003BEC23 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		673605BE245B3F7400727859 /* ColorConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		673605BE245B3F7400727859 /* Color2Code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Color2Code.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		673605C1245B3F7400727859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		673605C3245B3F7400727859 /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 		673605C5245B3F7500727859 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		673605BF245B3F7400727859 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				673605BE245B3F7400727859 /* ColorConverter.app */,
+				673605BE245B3F7400727859 /* Color2Code.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,9 +199,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		673605BD245B3F7400727859 /* ColorConverter */ = {
+		673605BD245B3F7400727859 /* Color2Code */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 673605CE245B3F7500727859 /* Build configuration list for PBXNativeTarget "ColorConverter" */;
+			buildConfigurationList = 673605CE245B3F7500727859 /* Build configuration list for PBXNativeTarget "Color2Code" */;
 			buildPhases = (
 				673605BA245B3F7400727859 /* Sources */,
 				673605BB245B3F7400727859 /* Frameworks */,
@@ -211,9 +211,9 @@
 			);
 			dependencies = (
 			);
-			name = ColorConverter;
+			name = Color2Code;
 			productName = ColorConverter;
-			productReference = 673605BE245B3F7400727859 /* ColorConverter.app */;
+			productReference = 673605BE245B3F7400727859 /* Color2Code.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -244,7 +244,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				673605BD245B3F7400727859 /* ColorConverter */,
+				673605BD245B3F7400727859 /* Color2Code */,
 			);
 		};
 /* End PBXProject section */
@@ -415,7 +415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0.0;
-				DEVELOPMENT_TEAM = 2K3J9PFDL3;
+				DEVELOPMENT_TEAM = 68EA362QKS;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ColorConverter/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -423,7 +423,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = KRASIUK.ColorConverter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krasiuk.colortocode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -437,7 +437,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0.0;
-				DEVELOPMENT_TEAM = 2K3J9PFDL3;
+				DEVELOPMENT_TEAM = 68EA362QKS;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ColorConverter/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -445,7 +445,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = KRASIUK.ColorConverter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.krasiuk.colortocode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -463,7 +463,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		673605CE245B3F7500727859 /* Build configuration list for PBXNativeTarget "ColorConverter" */ = {
+		673605CE245B3F7500727859 /* Build configuration list for PBXNativeTarget "Color2Code" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				673605CF245B3F7500727859 /* Debug */,
