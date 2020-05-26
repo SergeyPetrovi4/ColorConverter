@@ -12,7 +12,7 @@ import CoreData
 class ColorHistoryManager {
     
     static let shared = ColorHistoryManager()
-    private let key = "com.colortocode.colorhistory"
+    private let key = "com.krasiuk.colortocode.colorhistory"
     private init() {}
     
     // MARK: - Retrive favorites

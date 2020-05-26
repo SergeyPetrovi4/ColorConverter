@@ -8,6 +8,7 @@
 
 import Cocoa
 import Carbon.HIToolbox
+import ServiceManagement
 
 class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
@@ -17,6 +18,9 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var colorHistoryContainer: NSStackView!
+    
+    @IBOutlet var contextMenu: NSMenu!
+    @IBOutlet weak var launchAtLoginItem: NSMenuItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +35,10 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
         self.tableView.dataSource = self
         
         self.updateHistoryOfColors()
+        
+        if let isLaunch = UserDefaults.standard.value(forKey: "com.krasiuk.colortocode.launch") as? Bool {
+            self.launchAtLoginItem.state = isLaunch ? .on : .off
+        }
     }
     
     // MARK: - Private
@@ -90,6 +98,35 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
 
         self.scrollView.isHidden = true
         return
+    }
+    
+    @IBAction func didClickOnSettionsButton(_ sender: NSButton) {
+        // Show popover menu
+        self.contextMenu.popUp(positioning: self.contextMenu.item(at: 0), at: NSEvent.mouseLocation, in: nil)
+    }
+    
+    @IBAction func didClickLaunchAtLoginItem(_ sender: NSMenuItem) {
+        
+        sender.state = (sender.state == .on) ? .off : .on
+        
+        switch sender.state {
+        case .on:
+            UserDefaults.standard.set(true, forKey: "com.krasiuk.colortocode.launch")
+            SMLoginItemSetEnabled("com.krasiuk.LaunchAtLoginHelper" as CFString, true)
+            
+        case .off:
+            UserDefaults.standard.set(false, forKey: "com.krasiuk.colortocode.launch")
+            SMLoginItemSetEnabled("com.krasiuk.LaunchAtLoginHelper" as CFString, false)
+            
+        default:
+            return
+        }
+        
+        UserDefaults.standard.synchronize()
+    }
+    
+    @IBAction func didClickQuitMenuItem(_ sender: NSMenuItem) {
+        NSApplication.shared.terminate(self)
     }
     
     // MARK: - NSTableViewDataSource
