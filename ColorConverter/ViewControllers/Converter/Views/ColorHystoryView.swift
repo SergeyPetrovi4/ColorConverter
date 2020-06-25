@@ -25,6 +25,9 @@ class ColorHistoryView: NSView {
             self.widthAnchor.constraint(equalToConstant: 20.0),
             self.heightAnchor.constraint(equalToConstant: 20.0)
         ])
+        
+        self.layer?.cornerRadius = 3.0
+        self.layer?.masksToBounds = true
     }
     
     required init?(coder: NSCoder) {
