@@ -10,6 +10,7 @@
 		67031BD624787C24003BEC23 /* ColorHystoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67031BD524787C24003BEC23 /* ColorHystoryView.swift */; };
 		67031BDA24787DAF003BEC23 /* ColorHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67031BD924787DAF003BEC23 /* ColorHistoryManager.swift */; };
 		67031BDC2479204D003BEC23 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67031BDB2479204D003BEC23 /* String.swift */; };
+		670B188924A49D68009BA638 /* DeleteBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670B188824A49D68009BA638 /* DeleteBadgeView.swift */; };
 		673605C2245B3F7400727859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605C1245B3F7400727859 /* AppDelegate.swift */; };
 		673605C4245B3F7400727859 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605C3245B3F7400727859 /* ConverterViewController.swift */; };
 		673605C6245B3F7500727859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673605C5245B3F7500727859 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		67031BD524787C24003BEC23 /* ColorHystoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHystoryView.swift; sourceTree = "<group>"; };
 		67031BD924787DAF003BEC23 /* ColorHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHistoryManager.swift; sourceTree = "<group>"; };
 		67031BDB2479204D003BEC23 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		670B188824A49D68009BA638 /* DeleteBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBadgeView.swift; sourceTree = "<group>"; };
 		673605BE245B3F7400727859 /* Color2Code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Color2Code.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		673605C1245B3F7400727859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		673605C3245B3F7400727859 /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				673605DB245C134A00727859 /* ColorDescriptionCellView.swift */,
 				67031BD524787C24003BEC23 /* ColorHystoryView.swift */,
+				670B188824A49D68009BA638 /* DeleteBadgeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				67732CAF24719237008E6877 /* ConverterPickColorView.swift in Sources */,
 				67732CB124719415008E6877 /* ConverterColorPicker.swift in Sources */,
 				67031BDA24787DAF003BEC23 /* ColorHistoryManager.swift in Sources */,
+				670B188924A49D68009BA638 /* DeleteBadgeView.swift in Sources */,
 				67031BDC2479204D003BEC23 /* String.swift in Sources */,
 				673605C4245B3F7400727859 /* ConverterViewController.swift in Sources */,
 				673605C2245B3F7400727859 /* AppDelegate.swift in Sources */,

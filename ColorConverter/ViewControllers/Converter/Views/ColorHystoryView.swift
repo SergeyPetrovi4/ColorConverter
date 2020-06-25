@@ -27,7 +27,7 @@ class ColorHistoryView: NSView {
         ])
         
         self.layer?.cornerRadius = 3.0
-        self.layer?.masksToBounds = true
+        self.layer?.masksToBounds = false
     }
     
     required init?(coder: NSCoder) {
@@ -43,6 +43,16 @@ class ColorHistoryView: NSView {
         self.layer?.backgroundColor = color.cgColor
         self.index = index
         self.completion = completion
+        
+        self.addDeleteBadge()
+    }
+    
+    func addDeleteBadge() {
+        
+        let deleteBadgeView = DeleteBadgeView()
+        deleteBadgeView.frame = CGRect(x: 13, y: 13, width: 12, height: 12)
+        deleteBadgeView.layer?.cornerRadius = deleteBadgeView.frame.width / 2.0
+        self.addSubview(deleteBadgeView)
     }
     
     override func mouseUp(with event: NSEvent) {
