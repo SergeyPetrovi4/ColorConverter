@@ -12,18 +12,25 @@ import QuartzCore
 
 class DeleteBadgeView: NSView {
     
-    override init(frame frameRect: NSRect) {
-        super.init(frame: frameRect)
+    typealias DeleteActionHandler = (() -> Void)
+    
+    private var completion: DeleteActionHandler?
+    
+    init(rect: NSRect, completion handler: @escaping DeleteActionHandler) {
+        super.init(frame: rect)
         
         self.wantsLayer = true
+        self.completion = handler
         
         let shadowLayer = NSShadow()
-        shadowLayer.shadowColor = NSColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        shadowLayer.shadowColor = NSColor(red: 0, green: 0, blue: 0, alpha: 0.2)
         shadowLayer.shadowOffset = CGSize(width: 0, height: -1.0)
         shadowLayer.shadowBlurRadius = 2.0
         self.shadow = shadowLayer
         
         self.layer?.backgroundColor = NSColor(red: 0.93, green: 0.37, blue: 0.33, alpha: 1.0).cgColor
+        self.layer?.borderWidth = 1.0
+        self.layer?.borderColor = NSColor(red: 0.79, green: 0.32, blue: 0.32, alpha: 0.2).cgColor
         
         let crossImageView = NSImageView()
         crossImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,5 +50,19 @@ class DeleteBadgeView: NSView {
         super.init(coder: coder)
         
         self.wantsLayer = true
+    }
+    
+    // MARK: - Actions
+    
+    override func mouseUp(with event: NSEvent) {
+        super.mouseUp(with: event)
+
+        self.completion?()
+    }
+    
+    // MARK: - Deinit
+    
+    deinit {
+        debugPrint("Deinit: \(self)")
     }
 }

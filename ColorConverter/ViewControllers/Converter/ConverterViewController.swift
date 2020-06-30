@@ -50,17 +50,48 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
         
         ColorHistoryManager.shared.colors.enumerated().forEach({
             
-            let historyView = ColorHistoryView()
             let value = ConverterManager.shared.hexRgb(hex: $0.element)
+            let historyContainerView = ColorHistoryContainerView()
+            let historyView = ColorHistoryView()
             
+            historyContainerView.colorHistory = historyView
+            historyContainerView.layoutChildIfNeeded()
+                        
             // Update color from history
-            historyView.set(color: NSColor(red: value.r, green: value.g, blue: value.b, alpha: value.a), atIndex: $0.offset) { (index) in
-                self.colorTextField.stringValue = ColorHistoryManager.shared.colors[index]
-                self.convertAndReloadUIData(with: ColorHistoryManager.shared.colors[index])
+            historyContainerView.set(color: NSColor(red: value.r, green: value.g, blue: value.b, alpha: value.a), atIndex: $0.offset) { (index, action) in
+                
+                switch action {
+                    
+                case .select:
+                    self.colorTextField.stringValue = ColorHistoryManager.shared.colors[index]
+                    self.convertAndReloadUIData(with: ColorHistoryManager.shared.colors[index])
+                    self.colorHistoryContainer.arrangedSubviews.enumerated().forEach({
+                        ($0.element as! ColorHistoryContainerView).removeDeleteButton()
+                        ($0.element as! ColorHistoryContainerView).colorHistory?.dropAnimation()
+                    })
+                    
+                case .remove:
+                    ColorHistoryManager.shared.remove(colorAtIndex: index)
+                    self.colorHistoryContainer.subviews.remove(at: index)
+                    self.colorHistoryContainer.arrangedSubviews.enumerated().forEach({
+                        ($0.element as! ColorHistoryContainerView).update(index: $0.offset)
+                    })
+                    
+                    // Updating UI based on lefted colors history
+                    self.colorTextField.stringValue = ""
+                    self.didHitEnterKey(self.colorTextField)
+                    self.colorHistoryContainer.isHidden = ColorHistoryManager.shared.colors.isEmpty
+                    
+                case .clean:
+                    self.colorHistoryContainer.arrangedSubviews.enumerated().forEach({
+                        ($0.element as! ColorHistoryContainerView).removeDeleteButton()
+                        ($0.element as! ColorHistoryContainerView).colorHistory?.dropAnimation()
+                    })
+                }
             }
             
-            self.colorHistoryContainer.addArrangedSubview(historyView)
-        })
+            self.colorHistoryContainer.addArrangedSubview(historyContainerView)
+        })        
     }
     
     private func convertAndReloadUIData(with value: String) {

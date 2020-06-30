@@ -26,6 +26,7 @@
 		67E2AE27247D12BE00E214C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E2AE25247D12BE00E214C6 /* Main.storyboard */; };
 		67E2AE2E247D136300E214C6 /* LaunchAtLoginHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 67E2AE1D247D12BC00E214C6 /* LaunchAtLoginHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		67E2AE30247D138600E214C6 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E2AE2F247D138600E214C6 /* ServiceManagement.framework */; };
+		67FEA0C324A680660009126B /* ColorHistoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FEA0C224A680660009126B /* ColorHistoryContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +68,7 @@
 		67E2AE28247D12BE00E214C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67E2AE29247D12BE00E214C6 /* LaunchAtLoginHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchAtLoginHelper.entitlements; sourceTree = "<group>"; };
 		67E2AE2F247D138600E214C6 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		67FEA0C224A680660009126B /* ColorHistoryContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHistoryContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				673605DB245C134A00727859 /* ColorDescriptionCellView.swift */,
+				67FEA0C224A680660009126B /* ColorHistoryContainerView.swift */,
 				67031BD524787C24003BEC23 /* ColorHystoryView.swift */,
 				670B188824A49D68009BA638 /* DeleteBadgeView.swift */,
 			);
@@ -359,6 +362,7 @@
 				673605C2245B3F7400727859 /* AppDelegate.swift in Sources */,
 				673605E3245C156B00727859 /* ConverterManager.swift in Sources */,
 				67031BD624787C24003BEC23 /* ColorHystoryView.swift in Sources */,
+				67FEA0C324A680660009126B /* ColorHistoryContainerView.swift in Sources */,
 				67732CAD247191C8008E6877 /* ConverterPickColorWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
