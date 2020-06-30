@@ -44,6 +44,20 @@ class ColorHistoryManager {
             return
         }
         
+        debugPrint("ColorToCode: Nothing to remove from db!")
+    }
+    
+    func remove(colorAtIndex index: Int) {
+        
+        if !self.colors.isEmpty {
+            
+            var colors = self.colors
+            colors.remove(at: index)
+            
+            self.update(elements: colors)
+            return
+        }
+        
         print("ColorToCode: Nothing to remove from db!")
     }
     

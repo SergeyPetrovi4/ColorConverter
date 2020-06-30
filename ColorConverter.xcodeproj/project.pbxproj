@@ -10,6 +10,7 @@
 		67031BD624787C24003BEC23 /* ColorHystoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67031BD524787C24003BEC23 /* ColorHystoryView.swift */; };
 		67031BDA24787DAF003BEC23 /* ColorHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67031BD924787DAF003BEC23 /* ColorHistoryManager.swift */; };
 		67031BDC2479204D003BEC23 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67031BDB2479204D003BEC23 /* String.swift */; };
+		670B188924A49D68009BA638 /* DeleteBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670B188824A49D68009BA638 /* DeleteBadgeView.swift */; };
 		673605C2245B3F7400727859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605C1245B3F7400727859 /* AppDelegate.swift */; };
 		673605C4245B3F7400727859 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673605C3245B3F7400727859 /* ConverterViewController.swift */; };
 		673605C6245B3F7500727859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673605C5245B3F7500727859 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		67E2AE27247D12BE00E214C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E2AE25247D12BE00E214C6 /* Main.storyboard */; };
 		67E2AE2E247D136300E214C6 /* LaunchAtLoginHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 67E2AE1D247D12BC00E214C6 /* LaunchAtLoginHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		67E2AE30247D138600E214C6 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E2AE2F247D138600E214C6 /* ServiceManagement.framework */; };
+		67FEA0C324A680660009126B /* ColorHistoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FEA0C224A680660009126B /* ColorHistoryContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +46,7 @@
 		67031BD524787C24003BEC23 /* ColorHystoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHystoryView.swift; sourceTree = "<group>"; };
 		67031BD924787DAF003BEC23 /* ColorHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHistoryManager.swift; sourceTree = "<group>"; };
 		67031BDB2479204D003BEC23 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		670B188824A49D68009BA638 /* DeleteBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBadgeView.swift; sourceTree = "<group>"; };
 		673605BE245B3F7400727859 /* Color2Code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Color2Code.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		673605C1245B3F7400727859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		673605C3245B3F7400727859 /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 		67E2AE28247D12BE00E214C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67E2AE29247D12BE00E214C6 /* LaunchAtLoginHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchAtLoginHelper.entitlements; sourceTree = "<group>"; };
 		67E2AE2F247D138600E214C6 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		67FEA0C224A680660009126B /* ColorHistoryContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHistoryContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				673605DB245C134A00727859 /* ColorDescriptionCellView.swift */,
+				67FEA0C224A680660009126B /* ColorHistoryContainerView.swift */,
 				67031BD524787C24003BEC23 /* ColorHystoryView.swift */,
+				670B188824A49D68009BA638 /* DeleteBadgeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,11 +356,13 @@
 				67732CAF24719237008E6877 /* ConverterPickColorView.swift in Sources */,
 				67732CB124719415008E6877 /* ConverterColorPicker.swift in Sources */,
 				67031BDA24787DAF003BEC23 /* ColorHistoryManager.swift in Sources */,
+				670B188924A49D68009BA638 /* DeleteBadgeView.swift in Sources */,
 				67031BDC2479204D003BEC23 /* String.swift in Sources */,
 				673605C4245B3F7400727859 /* ConverterViewController.swift in Sources */,
 				673605C2245B3F7400727859 /* AppDelegate.swift in Sources */,
 				673605E3245C156B00727859 /* ConverterManager.swift in Sources */,
 				67031BD624787C24003BEC23 /* ColorHystoryView.swift in Sources */,
+				67FEA0C324A680660009126B /* ColorHistoryContainerView.swift in Sources */,
 				67732CAD247191C8008E6877 /* ConverterPickColorWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
