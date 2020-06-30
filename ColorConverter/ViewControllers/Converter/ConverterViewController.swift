@@ -102,6 +102,14 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
         self.tableView.reloadData()
         self.tableViewHeightConstraint.constant = self.tableView.intrinsicContentSize.height
     }
+    
+    private func convertAndUpdate(from color: String) {
+        
+        // Convert and update color from user sent
+        self.convertAndReloadUIData(with: color)
+        ColorHistoryManager.shared.append(color: color)
+        self.updateHistoryOfColors()
+    }
 
     // MARK: - Actions
     
@@ -117,18 +125,25 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
     
     @IBAction func didHitEnterKey(_ sender: NSTextField) {
         
-        if !sender.stringValue.isEmpty, sender.stringValue.isHexColor {
-
-            // Convert and update color from user sent
-            self.convertAndReloadUIData(with: sender.stringValue)
-            ColorHistoryManager.shared.append(color: sender.stringValue)
-            self.updateHistoryOfColors()
-            
+        if sender.stringValue.isEmpty {
+            self.scrollView.isHidden = true
             return
         }
+        
+        // Convert from hex
+        if !sender.stringValue.isEmpty, sender.stringValue.isHexColor {
 
-        self.scrollView.isHidden = true
-        return
+            self.convertAndUpdate(from: sender.stringValue)
+            return
+        }
+        
+        // Convert from rgb
+        if !sender.stringValue.hex.isEmpty {
+            
+            sender.stringValue = "#\(sender.stringValue.hex)"
+            self.convertAndUpdate(from: sender.stringValue.hex)
+            return
+        }
     }
     
     @IBAction func didClickOnSettionsButton(_ sender: NSButton) {
@@ -206,12 +221,7 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
     // MARK: - NSControlTextEditingDelegate
     
     func controlTextDidChange(_ obj: Notification) {
-        
-        guard let textField = obj.object as? NSTextField else {
-            return
-        }
-        
-        self.scrollView.isHidden = textField.stringValue.isEmpty
+        self.scrollView.isHidden = true
     }
 }
 
