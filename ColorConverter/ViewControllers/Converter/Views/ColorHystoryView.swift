@@ -45,7 +45,6 @@ class ColorHistoryView: NSView {
     // MARK: - Configure
     
     func set(color: NSColor) {
-        
         self.layer?.backgroundColor = color.cgColor
     }
     
