@@ -701,7 +701,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="OL2-s4-Ebi"/>
                                                         </constraints>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Put HEX color and hit Enter key" usesSingleLineMode="YES" bezelStyle="round" id="80R-Vx-oN2">
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Put HEX / RGB (separated by comma), hit Enter key" usesSingleLineMode="YES" bezelStyle="round" id="80R-Vx-oN2">
                                                             <font key="font" usesAppearanceFont="YES"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -745,8 +745,8 @@
                                                 </constraints>
                                                 <visibilityPriorities>
                                                     <integer value="1000"/>
-                                                    <real value="1000"/>
-                                                    <real value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
                                                 </visibilityPriorities>
                                                 <customSpacing>
                                                     <real value="3.4028234663852886e+38"/>
