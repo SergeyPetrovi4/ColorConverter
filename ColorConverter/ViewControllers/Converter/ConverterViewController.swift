@@ -141,7 +141,7 @@ class ConverterViewController: NSViewController, NSTableViewDelegate, NSTableVie
         if !sender.stringValue.hex.isEmpty {
             
             sender.stringValue = "#\(sender.stringValue.hex)"
-            self.convertAndUpdate(from: sender.stringValue.hex)
+            self.convertAndUpdate(from: sender.stringValue)
             return
         }
     }

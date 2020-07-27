@@ -18,12 +18,12 @@ extension String {
     
     var hex: String {
         
-        let components = self.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: ",")
+        let components = self.replacingOccurrences(of: " ", with: "").trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: ",")
         
         if components.isEmpty {
             return ""
         }
-        
-        return components.map { String(format: "%02hhx", $0) }.joined()
+
+        return components.map({ String(format: "%02X", Int($0) ?? 0) }).joined()
     }
 }
